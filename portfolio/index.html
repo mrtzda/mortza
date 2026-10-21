@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Morteza — AI Artist</title>
+  <meta name="description" content="Portfolio of AI films: micro dramas, weddings and commercials.">
+  <meta property="og:title" content="Morteza — AI Artist">
+  <meta property="og:description" content="Portfolio of AI films: micro dramas, weddings and commercials.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a0a'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23e8dcc8'/%3E%3C/svg%3E">
+  <link rel="preload" href="assets/fonts/instrument-serif-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#top" data-t="name"></a>
+    <nav>
+      <a href="#work" data-t="nav.work"></a>
+      <a href="#about" data-t="nav.about"></a>
+      <a href="#contact" data-t="nav.contact"></a>
+      <button class="lang" type="button" aria-label="Change language"></button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow" data-t="title"></p>
+      <h1 data-t="name"></h1>
+      <p class="tagline" data-t="tagline"></p>
+      <a class="scroll" href="#work" data-t="cta"></a>
+    </section>
+
+    <section id="work" class="work">
+      <div class="tabs" role="tablist"></div>
+      <div class="grid"></div>
+    </section>
+
+    <section id="about" class="about">
+      <img class="portrait" alt="">
+      <div>
+        <h2 data-t="nav.about"></h2>
+        <p class="bio"></p>
+        <p class="label" data-t="tools"></p>
+        <ul class="tools"></ul>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2 data-t="contactHead"></h2>
+      <div class="contact-links"></div>
+    </section>
+  </main>
+
+  <footer class="foot"><span class="copy"></span></footer>
+
+  <dialog class="viewer">
+    <button class="close" type="button" aria-label="Close">×</button>
+    <div class="viewer-body">
+      <div class="player"></div>
+      <div class="info"></div>
+    </div>
+  </dialog>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
