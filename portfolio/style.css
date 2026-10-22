@@ -165,7 +165,8 @@ html[lang="fa"] .contact-links a { text-align: right; }
 }
 .close:hover { color: var(--text); }
 .viewer-body { display: grid; gap: 32px; grid-template-columns: minmax(0, 1fr); padding: 56px 0 24px; }
-.viewer-body.is-vertical { grid-template-columns: minmax(0, 420px) minmax(0, 1fr); align-items: start; }
+.viewer-body.is-vertical { grid-template-columns: minmax(0, 400px) minmax(0, 1fr); align-items: start; }
+.is-vertical .player.ig { aspect-ratio: 9 / 18.5; }
 .player { position: relative; aspect-ratio: 16 / 9; background: #000; border-radius: 4px; overflow: hidden; }
 .is-vertical .player { aspect-ratio: 9 / 16; max-height: calc(100dvh - 120px); margin-inline: auto; width: 100%; }
 .player iframe, .player img { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
@@ -174,6 +175,17 @@ html[lang="fa"] .contact-links a { text-align: right; }
   background: linear-gradient(transparent, rgba(0,0,0,.8));
 }
 .info .label { margin-bottom: 8px; }
+.info .stat, .card-stat { color: var(--accent); font-size: 14px; letter-spacing: .04em; }
+.info .stat { margin: -4px 0 20px; }
+.card-stat { margin-top: 4px; font-size: 13px; }
+.parts { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.parts button { border: 1px solid var(--line); border-radius: 99px; padding: 6px 16px; font-size: 14px; color: var(--muted); }
+.parts button:hover { color: var(--text); }
+.parts button[aria-pressed="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
+.info .note { margin-top: 28px; padding-inline-start: 16px; border-inline-start: 1px solid var(--line); color: var(--muted); font-size: 15px; max-width: 64ch; }
+.info .cols p:not(.label), .info li { font-size: 16px; }
+.player.ig { background: #fff; }
+.player.ig iframe { object-fit: initial; }
 .info h2 { font: 400 clamp(36px, 5vw, 60px)/1.05 var(--display); margin-bottom: 16px; }
 html[lang="fa"] .info h2 { font-weight: 700; line-height: 1.35; }
 .info .summary { color: var(--muted); max-width: 60ch; margin-bottom: 28px; }

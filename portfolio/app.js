@@ -7,13 +7,13 @@
       "nav.work": "Work", "nav.about": "About", "nav.contact": "Contact",
       cta: "See the work ↓", all: "All", tools: "Tools", contactHead: "Let's make something",
       role: "My role", did: "What I did", email: "Email", instagram: "Instagram",
-      soon: "Video coming soon", watchOn: "Watch on", switchTo: "فارسی",
+      soon: "Video coming soon", watchOn: "Watch on", switchTo: "فارسی", video: "Video",
     },
     fa: {
       "nav.work": "نمونه‌کارها", "nav.about": "درباره‌ی من", "nav.contact": "تماس",
       cta: "دیدن کارها ↓", all: "همه", tools: "ابزارها", contactHead: "بیا با هم بسازیم",
       role: "نقش من", did: "کارهایی که انجام دادم", email: "ایمیل", instagram: "اینستاگرام",
-      soon: "ویدئو به‌زودی", watchOn: "دیدن در", switchTo: "English",
+      soon: "ویدئو به‌زودی", watchOn: "دیدن در", switchTo: "English", video: "ویدئو",
     },
   };
 
@@ -85,32 +85,59 @@
         </div>
         <div class="meta"><h3>${esc(t(p.title))}</h3><span class="year">${num(p.year)}</span></div>
         <p class="role">${esc(dot(catLabel(p.category), t(p.role)))}</p>
+        ${p.stat ? `<p class="card-stat">${esc(t(p.stat))}</p>` : ""}
       </button>`).join("");
   }
 
-  const cover = (p) => p.cover || (p.youtube ? `https://i.ytimg.com/vi/${p.youtube}/hqdefault.jpg` : "");
+  // A project can have one video (youtube / instagram) or several (videos: [...])
+  const videosOf = (p) => p.videos?.length ? p.videos : (p.youtube || p.instagram) ? [{ youtube: p.youtube, instagram: p.instagram }] : [];
+  const igId = (url) => (String(url || "").match(/instagram\.com\/(?:reel|p|tv)\/([\w-]+)/) || [])[1];
+  const cover = (p) => p.cover || (videosOf(p)[0]?.youtube ? `https://i.ytimg.com/vi/${videosOf(p)[0].youtube}/hqdefault.jpg` : "");
+  let part = 0;
 
   function open(i) {
     current = S.projects[i];
-    const body = $(".viewer-body");
-    body.classList.toggle("is-vertical", !!current.vertical);
-    $(".player").innerHTML = current.youtube
-      ? `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(current.youtube)}?autoplay=1&rel=0&modestbranding=1&playsinline=1" title="${esc(t(current.title))}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`
-      : `<img src="${esc(cover(current))}" alt=""><p class="soon">${UI[lang].soon}</p>`;
+    part = 0;
+    $(".viewer-body").classList.toggle("is-vertical", !!current.vertical);
+    play();
     fillInfo(current);
     $(".viewer").showModal();
   }
 
+  function play() {
+    const v = videosOf(current)[part];
+    const el = $(".player");
+    const ig = v && !v.youtube && igId(v.instagram);
+    el.classList.toggle("ig", !!ig);
+    if (v?.youtube) {
+      el.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.youtube)}?autoplay=1&rel=0&modestbranding=1&playsinline=1" title="${esc(t(current.title))}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+    } else if (ig) {
+      el.innerHTML = `<iframe src="https://www.instagram.com/reel/${ig}/embed/" title="${esc(t(current.title))}" allow="autoplay; encrypted-media; fullscreen" allowfullscreen scrolling="no"></iframe>`;
+    } else {
+      el.innerHTML = `<img src="${esc(cover(current))}" alt=""><p class="soon">${esc(t(current.soon) || UI[lang].soon)}</p>`;
+    }
+  }
+
   function fillInfo(p) {
-    const links = [...(p.youtube ? [{ label: "YouTube", url: `https://youtu.be/${p.youtube}` }] : []), ...(p.links || [])];
+    const vids = videosOf(p);
+    const links = [
+      ...vids.filter((v) => v.youtube).map((v) => ({ label: "YouTube", url: `https://youtu.be/${v.youtube}` })),
+      ...vids.filter((v) => v.instagram && !v.youtube).map((v) => ({ label: "Instagram", url: v.instagram })),
+      ...(p.links || []),
+    ].filter((l, i, a) => a.findIndex((x) => x.url === l.url) === i);
+    const list = (arr) => `<ul>${(arr || []).map((x) => `<li>${esc(x)}</li>`).join("")}</ul>`;
     $(".info").innerHTML = `
-      <p class="label">${esc(dot(catLabel(p.category), num(p.year)))}</p>
+      <p class="label">${esc(dot(catLabel(p.category), t(p.client), num(p.year)))}</p>
       <h2>${esc(t(p.title))}</h2>
+      ${p.stat ? `<p class="stat">${esc(t(p.stat))}</p>` : ""}
+      ${vids.length > 1 ? `<div class="parts">${vids.map((v, k) => `<button type="button" data-part="${k}" aria-pressed="${k === part}">${esc(t(v.label) || `${UI[lang].video} ${num(k + 1)}`)}</button>`).join("")}</div>` : ""}
       <p class="summary">${esc(t(p.summary))}</p>
       <div class="cols">
         <div><p class="label">${UI[lang].role}</p><p>${esc(t(p.role))}</p></div>
-        <div><p class="label">${UI[lang].did}</p><ul>${(t(p.did) || []).map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>
+        <div><p class="label">${UI[lang].did}</p>${list(t(p.did))}</div>
+        ${p.tools?.length ? `<div><p class="label">${UI[lang].tools}</p>${list(p.tools)}</div>` : ""}
       </div>
+      ${p.note ? `<p class="note">${esc(t(p.note))}</p>` : ""}
       ${links.length ? `<div class="ext">${links.map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${UI[lang].watchOn} ${esc(l.label)} ↗</a>`).join("")}</div>` : ""}`;
   }
 
@@ -135,6 +162,13 @@
   $(".grid").addEventListener("click", (e) => {
     const c = e.target.closest(".card");
     if (c) open(+c.dataset.i);
+  });
+  $(".info").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-part]");
+    if (!b || !current) return;
+    part = +b.dataset.part;
+    play();
+    fillInfo(current);
   });
   const viewer = $(".viewer");
   $(".close").addEventListener("click", close);
