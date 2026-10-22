@@ -8,6 +8,7 @@
     vertical — true for 9:16 videos (reels, micro dramas)
     cover    — image in assets/covers/ (best size: 1200×1500, 4:5)
     links    — extra places the video lives (Instagram, Vimeo, …)
+    category — one of the ids in `categories`, or "" to show it only under All
 */
 
 window.SITE = {
@@ -28,7 +29,7 @@ window.SITE = {
   },
 
   contact: {
-    email: "hello@example.com",
+    email: "morteza58382@gmail.com",
     instagram: "example", // username only, without @
   },
 

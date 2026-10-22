@@ -35,6 +35,7 @@
   const t = (obj) => (obj && typeof obj === "object" ? obj[lang] ?? obj.en : obj ?? "");
   const num = (n) => (lang === "fa" ? faDigits(n) : String(n));
   const catLabel = (id) => t(S.categories.find((c) => c.id === id)?.label);
+  const dot = (...parts) => parts.filter(Boolean).join(" · ");
 
   function render() {
     const html = document.documentElement;
@@ -83,7 +84,7 @@
           <span class="play" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg></span>
         </div>
         <div class="meta"><h3>${esc(t(p.title))}</h3><span class="year">${num(p.year)}</span></div>
-        <p class="role">${esc(catLabel(p.category))} · ${esc(t(p.role))}</p>
+        <p class="role">${esc(dot(catLabel(p.category), t(p.role)))}</p>
       </button>`).join("");
   }
 
@@ -103,7 +104,7 @@
   function fillInfo(p) {
     const links = [...(p.youtube ? [{ label: "YouTube", url: `https://youtu.be/${p.youtube}` }] : []), ...(p.links || [])];
     $(".info").innerHTML = `
-      <p class="label">${esc(catLabel(p.category))} · ${num(p.year)}</p>
+      <p class="label">${esc(dot(catLabel(p.category), num(p.year)))}</p>
       <h2>${esc(t(p.title))}</h2>
       <p class="summary">${esc(t(p.summary))}</p>
       <div class="cols">
