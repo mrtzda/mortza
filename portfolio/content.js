@@ -19,12 +19,12 @@ window.SITE = {
   name: { en: "Morteza Dehghani", fa: "مرتضی دهقانی" },
   title: { en: "AI Artist", fa: "هنرمند هوش مصنوعی" },
   tagline: {
-    en: "Micro dramas, commercials and wedding films, made with AI from idea to final cut.",
-    fa: "میکرودراما، تبلیغات و فیلم عروسی؛ ساخته‌شده با هوش مصنوعی، از ایده تا خروجی نهایی.",
+    en: "Micro dramas, commercials and wedding films, made with AI.",
+    fa: "میکرودراما، تبلیغات و فیلم عروسی؛ ساخته‌شده با هوش مصنوعی.",
   },
 
   about: {
-    photo: "assets/img/portrait.svg",
+    photo: "assets/img/portrait.jpg",
     text: {
       en: "I'm Morteza Dehghani, an AI artist. I take ideas from concept to final cut with generative tools: building characters and worlds, generating every shot, and shaping it all with edit, sound and color. I work across micro-drama series, commercials and personal wedding films, and I care most about the things AI can't do on its own: story, rhythm and feeling.",
       fa: "مرتضی دهقانی هستم، هنرمند هوش مصنوعی. ایده را تا خروجی نهایی با ابزارهای هوش مصنوعی می‌سازم: از ساخت کاراکتر و دنیای قصه تا تولید تک‌تک نماها، و بعد تدوین، صدا و رنگ. روی سریال‌های میکرودراما، تبلیغات و فیلم‌های عروسی کار می‌کنم و بیشتر از هر چیز به چیزهایی اهمیت می‌دهم که هوش مصنوعی به‌تنهایی از پسش برنمی‌آید: قصه، ریتم و حس.",
@@ -125,7 +125,7 @@ window.SITE = {
       title: { en: "Game Over", fa: "گیم اور" },
       year: 2026,
       vertical: true,
-      cover: "assets/covers/game-over.jpg",
+      cover: "assets/covers/game-over.svg",
       stat: { en: "Micro series · in production", fa: "میکروسریال · در حال تولید" },
       videos: [
         { label: { en: "Episode 1", fa: "قسمت ۱" } },
@@ -136,13 +136,12 @@ window.SITE = {
         en: "A vertical crime thriller. Hamed agrees to secretly film his friend Arash settling an old score in a car junkyard, but the fight turns deadly: a stranger on a motorcycle kills Arash and leaves Hamed unconscious in the dirt. When he wakes up, the body is gone, and a message lights up his phone: \"The game has begun.\" Photos arrive that make Hamed look like the killer, and when he reaches the police station, the stranger threatens Haniyeh, Arash's sister and the woman Hamed loves. From then on, every move is part of someone else's game.",
         fa: "یک تریلر جنایی عمودی. حامد قبول می‌کند پنهانی از دوستش آرش فیلم بگیرد که در گورستان ماشین‌های اسقاطی می‌خواهد یک حساب قدیمی را صاف کند؛ اما دعوا مرگبار می‌شود: یک موتورسوار ناشناس آرش را می‌کشد و حامد را بیهوش روی خاک رها می‌کند. وقتی به هوش می‌آید، جنازه نیست و پیامی روی گوشی‌اش روشن می‌شود: «بازی شروع شد.» عکس‌هایی می‌رسد که حامد را قاتل نشان می‌دهد و وقتی به کلانتری می‌رسد، ناشناس هانیه، خواهر آرش و کسی که حامد دوستش دارد، را تهدید می‌کند. از این به بعد هر حرکتش بخشی از بازی کس دیگری است.",
       },
-      role: { en: "AI Director: images and video", fa: "کارگردان هوش مصنوعی: تصویر و ویدئو" },
+      role: { en: "AI Video Creator", fa: "سازنده‌ی ویدئو با هوش مصنوعی" },
       did: {
-        en: ["Visual design of characters and locations", "Generated all images", "Generated all video", "Turned the script into shots"],
-        fa: ["طراحی بصری کاراکترها و لوکیشن‌ها", "ساخت همه‌ی تصویرها", "ساخت همه‌ی ویدئوها", "تبدیل فیلمنامه به نما"],
+        en: ["Generated all video", "Turned scenes filmed with real actors into AI shots with Genjutsu", "Worked alongside a director, two writers and an AI image artist"],
+        fa: ["ساخت همه‌ی ویدئوها", "تبدیل صحنه‌هایی که با بازیگر واقعی فیلم‌برداری شد به نمای هوش مصنوعی با گنجوتسو", "همکاری با کارگردان، دو نویسنده و یک طراح تصویر هوش مصنوعی"],
       },
-      credits: { en: "Amirreza Maleki & Elham Ahmadi", fa: "امیررضا ملکی و الهام احمدی" },
-      tools: ["Seedream 5", "GPT Image 2.5", "Seedance 2.5"],
+      tools: ["Seedream 5", "GPT Image 2.5", "Seedance 2.5", "Genjutsu"],
     },
     {
       category: "commercial",
@@ -150,7 +149,7 @@ window.SITE = {
       client: { en: "Personal practice", fa: "تمرین شخصی" },
       year: 2026,
       vertical: true,
-      cover: "assets/covers/commercial-2.svg",
+      cover: "assets/covers/promptr.jpg",
       videos: [{ instagram: "https://www.instagram.com/reel/DaTK41cga9v/" }],
       summary: {
         en: "A personal study: I rebuilt Promptr's mineral water ad entirely with AI, matching its framing, light and pacing as closely as I could. It was made for practice, not for a client, and was never paid. All credit for the idea, direction and sound goes to Promptr; the original audio track is used unchanged.",
