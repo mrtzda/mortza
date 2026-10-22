@@ -7,6 +7,7 @@
     videos   — one or more videos. Each one has either
                  youtube:   the video ID (https://youtu.be/AbC123xyz → "AbC123xyz")
                  instagram: the full reel link
+                 file:      a video file inside assets/video/ (plays everywhere, also in Iran)
                  drive:     a Google Drive file ID (file must be shared "Anyone with the link")
                YouTube is preferred: it looks cleaner on the site.
     vertical — true for 9:16 videos (reels, micro dramas)
@@ -73,17 +74,17 @@ window.SITE = {
       category: "wedding",
       title: { en: "The Proposal", fa: "خواستگاری" },
       year: 2026,
-      vertical: true,
+      vertical: false,
       cover: "assets/covers/proposal.jpg",
-      videos: [{}],
+      videos: [{ file: "assets/video/proposal.mp4" }],
       summary: {
-        en: "A custom film for a man who wanted to propose to his girlfriend. Their story was retold in an imagined ancient world, and the film was played on the night of the proposal at a villa, right before he asked the question.",
-        fa: "یک فیلم اختصاصی برای مردی که می‌خواست از دوست‌دخترش خواستگاری کند. قصه‌ی آن دو در یک دنیای باستانی خیالی روایت شد و فیلم شب خواستگاری در یک ویلا پخش شد، درست قبل از اینکه سؤالش را بپرسد.",
+        en: "A custom film for a man who wanted to propose to his girlfriend. The two of them meet again and again across different eras, from the ancient world to the present day, until the story arrives at the proposal itself. The film was played on the night of the proposal at a villa, right before he asked the question.",
+        fa: "یک فیلم اختصاصی برای مردی که می‌خواست از دوست‌دخترش خواستگاری کند. آن دو در دوره‌های مختلف تاریخ، از دنیای باستان تا امروز، بارها به هم می‌رسند تا قصه به خود شب خواستگاری برسد. فیلم شب خواستگاری در یک ویلا پخش شد، درست قبل از اینکه سؤالش را بپرسد.",
       },
       role: { en: "Creator: idea, AI production and edit", fa: "سازنده: ایده، تولید با هوش مصنوعی و تدوین" },
       did: {
-        en: ["Story built around the couple", "Ancient-world look and characters", "Generated every shot", "Edit"],
-        fa: ["قصه بر اساس زندگی زوج", "طراحی فضا و کاراکترهای باستانی", "ساخت همه‌ی نماها", "تدوین"],
+        en: ["Story built around the couple", "Characters and worlds for each era", "Generated every shot", "Edit"],
+        fa: ["قصه بر اساس زندگی زوج", "طراحی کاراکتر و فضای هر دوره", "ساخت همه‌ی نماها", "تدوین"],
       },
     },
     {

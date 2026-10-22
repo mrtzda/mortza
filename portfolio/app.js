@@ -106,10 +106,12 @@
   function play() {
     const v = videosOf(current)[part];
     const el = $(".player");
-    const ig = v && !v.youtube && !v.drive && igId(v.instagram);
+    const ig = v && !v.youtube && !v.drive && !v.file && igId(v.instagram);
     el.classList.toggle("ig", !!ig);
     if (v?.youtube) {
       el.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.youtube)}?autoplay=1&rel=0&modestbranding=1&playsinline=1" title="${esc(t(current.title))}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+    } else if (v?.file) {
+      el.innerHTML = `<video src="${esc(v.file)}" poster="${esc(cover(current))}" controls autoplay playsinline preload="metadata"></video>`;
     } else if (v?.drive) {
       el.innerHTML = `<iframe src="https://drive.google.com/file/d/${encodeURIComponent(v.drive)}/preview" title="${esc(t(current.title))}" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
     } else if (ig) {
