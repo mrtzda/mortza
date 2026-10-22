@@ -46,14 +46,13 @@ window.SITE = {
   projects: [
     {
       category: "wedding",
-      title: { en: "AI Wedding Film", fa: "فیلم عروسی با هوش مصنوعی" },
+      title: { en: "Mia & Kourosh", fa: "میا و کوروش" },
       year: 2026,
       vertical: true,
       cover: "assets/covers/wedding-mia-kourosh.jpg",
       stat: { en: "1.7M views", fa: "۱.۷ میلیون بازدید" },
       videos: [
         { instagram: "https://www.instagram.com/reel/DcRhpV-NnUO/" },
-        { instagram: "https://www.instagram.com/reel/DdhSYEkRDl1/" },
       ],
       summary: {
         en: "I saw a few videos in this style on my Explore page and made one for an Iranian audience. It went far beyond what I expected: that one video brought in around 10 custom projects. One was played at a real wedding, and the guests' reaction video brought in even more orders. Some couples sent me voice messages in tears to thank me.",
@@ -68,6 +67,23 @@ window.SITE = {
       note: {
         en: "These projects come with very tight deadlines (a partner's birthday in three days, a wedding next week) and personal budgets, so I deliberately put speed ahead of maximum quality. Where continuity isn't perfect, that comes from those constraints, not from the limit of what I can do.",
         fa: "این پروژه‌ها زمان خیلی کوتاهی دارند (تولد همسر تا سه روز دیگر، عروسی هفته‌ی بعد) و بودجه‌شان شخصی است؛ برای همین آگاهانه سرعت را به بالاترین کیفیت ترجیح دادم. اگر جایی پیوستگی یا دقت صددرصد نیست، به‌خاطر همین محدودیت‌هاست، نه سقف توانایی من.",
+      },
+    },
+    {
+      category: "wedding",
+      title: { en: "Isfahan Wedding", fa: "عروسی اصفهان" },
+      year: 2026,
+      vertical: true,
+      cover: "assets/covers/wedding-isfahan.svg",
+      videos: [{ instagram: "https://www.instagram.com/reel/DdhSYEkRDl1/" }],
+      summary: {
+        en: "A custom film commissioned by a bride and groom for their wedding ceremony in Isfahan, Iran. Their story was turned into a short AI film and played for their guests on the wedding day.",
+        fa: "یک فیلم اختصاصی که عروس و داماد برای مراسم عروسی‌شان در اصفهان سفارش دادند. قصه‌ی آن‌ها به یک فیلم کوتاه با هوش مصنوعی تبدیل شد و روز عروسی برای مهمان‌ها پخش شد.",
+      },
+      role: { en: "Creator: idea, AI production and edit", fa: "سازنده: ایده، تولید با هوش مصنوعی و تدوین" },
+      did: {
+        en: ["Story built around the couple", "Generated every shot", "Edit"],
+        fa: ["قصه بر اساس زندگی زوج", "ساخت همه‌ی نماها", "تدوین"],
       },
     },
     {
@@ -93,7 +109,7 @@ window.SITE = {
       client: { en: "Al Jazeera", fa: "الجزیره" },
       year: 2026,
       vertical: true,
-      cover: "assets/covers/commercial-1.svg",
+      cover: "assets/covers/war-cup.jpg",
       videos: [
         { instagram: "https://www.instagram.com/reel/DZfpPH8uj8B/" },
         { instagram: "https://www.instagram.com/reel/DaC_e77EtjT/" },
@@ -143,11 +159,11 @@ window.SITE = {
       title: { en: "Game Over", fa: "گیم اور" },
       year: 2026,
       vertical: true,
-      cover: "assets/covers/game-over.svg",
+      cover: "assets/covers/game-over.jpg",
       stat: { en: "Micro series · in production", fa: "میکروسریال · در حال تولید" },
       videos: [
-        { label: { en: "Episode 1", fa: "قسمت ۱" } },
-        { label: { en: "Episode 2", fa: "قسمت ۲" } },
+        { label: { en: "Episode 1", fa: "قسمت ۱" }, file: "assets/video/game-over-ep1.mp4" },
+        { label: { en: "Episode 2", fa: "قسمت ۲" }, file: "assets/video/game-over-ep2.mp4" },
         { label: { en: "More episodes · soon", fa: "قسمت‌های بعد · به‌زودی" } },
       ],
       summary: {
