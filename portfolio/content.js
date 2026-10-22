@@ -30,7 +30,7 @@ window.SITE = {
 
   contact: {
     email: "morteza58382@gmail.com",
-    instagram: "example", // username only, without @
+    instagram: "mrtz_da", // username only, without @
   },
 
   categories: [
