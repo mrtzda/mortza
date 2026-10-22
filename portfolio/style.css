@@ -44,11 +44,10 @@ body::after {
 /* header */
 .top {
   position: fixed; inset: 0 0 auto; z-index: 20;
-  display: flex; justify-content: space-between; align-items: center;
+  display: flex; justify-content: flex-end; align-items: center;
   padding: 20px var(--gutter);
   background: linear-gradient(var(--bg), transparent);
 }
-.brand { font: 400 22px var(--display); letter-spacing: .01em; }
 .top nav { display: flex; align-items: center; gap: clamp(14px, 3vw, 32px); font-size: 14px; }
 .top nav a { color: var(--muted); transition: color .2s; }
 .top nav a:hover { color: var(--text); }

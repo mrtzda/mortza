@@ -17,7 +17,7 @@
 
 window.SITE = {
   name: { en: "Morteza Dehghani", fa: "مرتضی دهقانی" },
-  title: { en: "AI Artist", fa: "هنرمند هوش مصنوعی" },
+  title: { en: "AI Filmmaker", fa: "فیلم‌ساز هوش مصنوعی" },
   tagline: {
     en: "Micro dramas, commercials and wedding films, made with AI.",
     fa: "میکرودراما، تبلیغات و فیلم عروسی؛ ساخته‌شده با هوش مصنوعی.",
@@ -26,8 +26,8 @@ window.SITE = {
   about: {
     photo: "assets/img/portrait.jpg",
     text: {
-      en: "I'm Morteza Dehghani, an AI artist. I take ideas from concept to final cut with generative tools: building characters and worlds, generating every shot, and shaping it all with edit, sound and color. I work across micro-drama series, commercials and personal wedding films, and I care most about the things AI can't do on its own: story, rhythm and feeling.",
-      fa: "مرتضی دهقانی هستم، هنرمند هوش مصنوعی. ایده را تا خروجی نهایی با ابزارهای هوش مصنوعی می‌سازم: از ساخت کاراکتر و دنیای قصه تا تولید تک‌تک نماها، و بعد تدوین، صدا و رنگ. روی سریال‌های میکرودراما، تبلیغات و فیلم‌های عروسی کار می‌کنم و بیشتر از هر چیز به چیزهایی اهمیت می‌دهم که هوش مصنوعی به‌تنهایی از پسش برنمی‌آید: قصه، ریتم و حس.",
+      en: "I'm Morteza Dehghani, an AI filmmaker. I take ideas from concept to final cut with generative tools: building characters and worlds, generating every shot, and shaping it all with edit, sound and color. I work across micro-drama series, commercials and personal wedding films, and I care most about the things AI can't do on its own: story, rhythm and feeling.",
+      fa: "مرتضی دهقانی هستم، فیلم‌ساز هوش مصنوعی. ایده را تا خروجی نهایی با ابزارهای هوش مصنوعی می‌سازم: از ساخت کاراکتر و دنیای قصه تا تولید تک‌تک نماها، و بعد تدوین، صدا و رنگ. روی سریال‌های میکرودراما، تبلیغات و فیلم‌های عروسی کار می‌کنم و بیشتر از هر چیز به چیزهایی اهمیت می‌دهم که هوش مصنوعی به‌تنهایی از پسش برنمی‌آید: قصه، ریتم و حس.",
     },
   },
 
@@ -48,7 +48,7 @@ window.SITE = {
       title: { en: "AI Wedding Film", fa: "فیلم عروسی با هوش مصنوعی" },
       year: 2026,
       vertical: true,
-      cover: "assets/covers/wedding-1.svg",
+      cover: "assets/covers/wedding-mia-kourosh.jpg",
       stat: { en: "1.7M views", fa: "۱.۷ میلیون بازدید" },
       videos: [
         { instagram: "https://www.instagram.com/reel/DcRhpV-NnUO/" },
@@ -67,6 +67,23 @@ window.SITE = {
       note: {
         en: "These projects come with very tight deadlines (a partner's birthday in three days, a wedding next week) and personal budgets, so I deliberately put speed ahead of maximum quality. Where continuity isn't perfect, that comes from those constraints, not from the limit of what I can do.",
         fa: "این پروژه‌ها زمان خیلی کوتاهی دارند (تولد همسر تا سه روز دیگر، عروسی هفته‌ی بعد) و بودجه‌شان شخصی است؛ برای همین آگاهانه سرعت را به بالاترین کیفیت ترجیح دادم. اگر جایی پیوستگی یا دقت صددرصد نیست، به‌خاطر همین محدودیت‌هاست، نه سقف توانایی من.",
+      },
+    },
+    {
+      category: "wedding",
+      title: { en: "The Proposal", fa: "خواستگاری" },
+      year: 2026,
+      vertical: true,
+      cover: "assets/covers/proposal.jpg",
+      videos: [{}],
+      summary: {
+        en: "A custom film for a man who wanted to propose to his girlfriend. Their story was retold in an imagined ancient world, and the film was played on the night of the proposal at a villa, right before he asked the question.",
+        fa: "یک فیلم اختصاصی برای مردی که می‌خواست از دوست‌دخترش خواستگاری کند. قصه‌ی آن دو در یک دنیای باستانی خیالی روایت شد و فیلم شب خواستگاری در یک ویلا پخش شد، درست قبل از اینکه سؤالش را بپرسد.",
+      },
+      role: { en: "Creator: idea, AI production and edit", fa: "سازنده: ایده، تولید با هوش مصنوعی و تدوین" },
+      did: {
+        en: ["Story built around the couple", "Ancient-world look and characters", "Generated every shot", "Edit"],
+        fa: ["قصه بر اساس زندگی زوج", "طراحی فضا و کاراکترهای باستانی", "ساخت همه‌ی نماها", "تدوین"],
       },
     },
     {

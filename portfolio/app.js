@@ -6,13 +6,13 @@
     en: {
       "nav.work": "Work", "nav.about": "About", "nav.contact": "Contact",
       cta: "See the work ↓", all: "All", tools: "Tools", contactHead: "From idea to final cut, together.",
-      role: "My role", did: "What I did", email: "Email", instagram: "Instagram",
+      role: "My role", did: "What I did", email: "Gmail", instagram: "Instagram",
       soon: "Video coming soon", watchOn: "Watch on", switchTo: "فارسی", video: "Video", credits: "Written by",
     },
     fa: {
       "nav.work": "نمونه‌کارها", "nav.about": "درباره‌ی من", "nav.contact": "تماس",
       cta: "دیدن کارها ↓", all: "همه", tools: "ابزارها", contactHead: "از ایده تا خروجی نهایی، با هم.",
-      role: "نقش من", did: "کارهایی که انجام دادم", email: "ایمیل", instagram: "اینستاگرام",
+      role: "نقش من", did: "کارهایی که انجام دادم", email: "جیمیل", instagram: "اینستاگرام",
       soon: "ویدئو به‌زودی", watchOn: "دیدن در", switchTo: "English", video: "ویدئو", credits: "نویسندگان",
     },
   };
