@@ -7,13 +7,13 @@
       "nav.work": "Work", "nav.about": "About", "nav.contact": "Contact",
       cta: "See the work ↓", all: "All", tools: "Tools", contactHead: "Let's make something",
       role: "My role", did: "What I did", email: "Email", instagram: "Instagram",
-      soon: "Video coming soon", watchOn: "Watch on", switchTo: "فارسی", video: "Video",
+      soon: "Video coming soon", watchOn: "Watch on", switchTo: "فارسی", video: "Video", credits: "Written by",
     },
     fa: {
       "nav.work": "نمونه‌کارها", "nav.about": "درباره‌ی من", "nav.contact": "تماس",
       cta: "دیدن کارها ↓", all: "همه", tools: "ابزارها", contactHead: "بیا با هم بسازیم",
       role: "نقش من", did: "کارهایی که انجام دادم", email: "ایمیل", instagram: "اینستاگرام",
-      soon: "ویدئو به‌زودی", watchOn: "دیدن در", switchTo: "English", video: "ویدئو",
+      soon: "ویدئو به‌زودی", watchOn: "دیدن در", switchTo: "English", video: "ویدئو", credits: "نویسندگان",
     },
   };
 
@@ -56,7 +56,6 @@
     p.src = S.about.photo;
     p.alt = t(S.name);
     $(".bio").textContent = t(S.about.text);
-    $(".tools").innerHTML = S.about.tools.map((x) => `<li>${esc(x)}</li>`).join("");
 
     const c = S.contact;
     $(".contact-links").innerHTML = [
@@ -107,10 +106,12 @@
   function play() {
     const v = videosOf(current)[part];
     const el = $(".player");
-    const ig = v && !v.youtube && igId(v.instagram);
+    const ig = v && !v.youtube && !v.drive && igId(v.instagram);
     el.classList.toggle("ig", !!ig);
     if (v?.youtube) {
       el.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.youtube)}?autoplay=1&rel=0&modestbranding=1&playsinline=1" title="${esc(t(current.title))}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+    } else if (v?.drive) {
+      el.innerHTML = `<iframe src="https://drive.google.com/file/d/${encodeURIComponent(v.drive)}/preview" title="${esc(t(current.title))}" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
     } else if (ig) {
       el.innerHTML = `<iframe src="https://www.instagram.com/reel/${ig}/embed/" title="${esc(t(current.title))}" allow="autoplay; encrypted-media; fullscreen" allowfullscreen scrolling="no"></iframe>`;
     } else {
@@ -122,7 +123,7 @@
     const vids = videosOf(p);
     const links = [
       ...vids.filter((v) => v.youtube).map((v) => ({ label: "YouTube", url: `https://youtu.be/${v.youtube}` })),
-      ...vids.filter((v) => v.instagram && !v.youtube).map((v) => ({ label: "Instagram", url: v.instagram })),
+      ...vids.filter((v) => v.instagram && !v.youtube && !v.drive).map((v) => ({ label: "Instagram", url: v.instagram })),
       ...(p.links || []),
     ].filter((l, i, a) => a.findIndex((x) => x.url === l.url) === i);
     const list = (arr) => `<ul>${(arr || []).map((x) => `<li>${esc(x)}</li>`).join("")}</ul>`;
@@ -135,6 +136,7 @@
       <div class="cols">
         <div><p class="label">${UI[lang].role}</p><p>${esc(t(p.role))}</p></div>
         <div><p class="label">${UI[lang].did}</p>${list(t(p.did))}</div>
+        ${p.credits ? `<div><p class="label">${UI[lang].credits}</p><p>${esc(t(p.credits))}</p></div>` : ""}
         ${p.tools?.length ? `<div><p class="label">${UI[lang].tools}</p>${list(p.tools)}</div>` : ""}
       </div>
       ${p.note ? `<p class="note">${esc(t(p.note))}</p>` : ""}

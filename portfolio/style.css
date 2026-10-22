@@ -72,7 +72,7 @@ html[lang="fa"] .lang { font-family: "Inter Tight", sans-serif; }
 }
 html[lang="fa"] .eyebrow, html[lang="fa"] .label { letter-spacing: 0; font-size: 14px; }
 .hero h1 {
-  font: 400 clamp(72px, 16vw, 230px)/.9 var(--display);
+  font: 400 clamp(64px, 12vw, 190px)/.92 var(--display);
   letter-spacing: -.02em; margin: 16px 0 28px;
 }
 html[lang="fa"] .hero h1 { font-weight: 800; line-height: 1.15; letter-spacing: 0; }

@@ -7,6 +7,7 @@
     videos   — one or more videos. Each one has either
                  youtube:   the video ID (https://youtu.be/AbC123xyz → "AbC123xyz")
                  instagram: the full reel link
+                 drive:     a Google Drive file ID (file must be shared "Anyone with the link")
                YouTube is preferred: it looks cleaner on the site.
     vertical — true for 9:16 videos (reels, micro dramas)
     cover    — image in assets/covers/ (best size: 1200×1500, 4:5)
@@ -15,7 +16,7 @@
 */
 
 window.SITE = {
-  name: { en: "Morteza", fa: "مرتضی" },
+  name: { en: "Morteza Dehghani", fa: "مرتضی دهقانی" },
   title: { en: "AI Artist", fa: "هنرمند هوش مصنوعی" },
   tagline: {
     en: "Micro dramas, commercials and wedding films, made with AI from idea to final cut.",
@@ -25,10 +26,9 @@ window.SITE = {
   about: {
     photo: "assets/img/portrait.svg",
     text: {
-      en: "I'm Morteza, an AI artist. I take ideas from concept to final cut with generative tools: building characters and worlds, generating every shot, and shaping it all with edit, sound and color. One of my wedding films reached 1.7 million views and turned into a steady stream of custom projects. I've made campaign films for Al Jazeera through a partner agency, and I'm currently producing a 35-episode cyberpunk micro-drama series.",
-      fa: "مرتضی هستم، هنرمند هوش مصنوعی. ایده را تا خروجی نهایی با ابزارهای هوش مصنوعی می‌سازم: از ساخت کاراکتر و دنیای قصه تا تولید تک‌تک نماها، و بعد تدوین، صدا و رنگ. یکی از فیلم‌های عروسی‌ام ۱.۷ میلیون بار دیده شد و به سفارش‌های پشت‌سرهم تبدیل شد. برای الجزیره از طریق یک آژانس همکار فیلم کمپین ساخته‌ام و الان در حال تولید یک سریال میکرودرامای سایبرپانک ۳۵ قسمتی هستم.",
+      en: "I'm Morteza Dehghani, an AI artist. I take ideas from concept to final cut with generative tools: building characters and worlds, generating every shot, and shaping it all with edit, sound and color. I work across micro-drama series, commercials and personal wedding films, and I care most about the things AI can't do on its own: story, rhythm and feeling.",
+      fa: "مرتضی دهقانی هستم، هنرمند هوش مصنوعی. ایده را تا خروجی نهایی با ابزارهای هوش مصنوعی می‌سازم: از ساخت کاراکتر و دنیای قصه تا تولید تک‌تک نماها، و بعد تدوین، صدا و رنگ. روی سریال‌های میکرودراما، تبلیغات و فیلم‌های عروسی کار می‌کنم و بیشتر از هر چیز به چیزهایی اهمیت می‌دهم که هوش مصنوعی به‌تنهایی از پسش برنمی‌آید: قصه، ریتم و حس.",
     },
-    tools: ["Seedance 2.5", "Kling 3", "Nano Banana Pro", "Google Flow", "GPT Image", "Vidu", "MiniMax", "Higgsfield"],
   },
 
   contact: {
@@ -71,7 +71,7 @@ window.SITE = {
     },
     {
       category: "commercial",
-      title: { en: "War Cup", fa: "وار کاپ" },
+      title: { en: "War Cup Campaign", fa: "کمپین وار کاپ" },
       client: { en: "Al Jazeera", fa: "الجزیره" },
       year: 2026,
       vertical: true,
@@ -90,7 +90,7 @@ window.SITE = {
         en: ["Concept and scenario development", "AI image and video generation", "Edit", "Sound design", "Color grading"],
         fa: ["ایده‌پردازی و نوشتن سناریو", "ساخت تصویر و ویدئو با هوش مصنوعی", "تدوین", "طراحی صدا", "اصلاح رنگ"],
       },
-      tools: ["Nano Banana Pro", "Kling 3", "Vidu"],
+      tools: ["GPT Image 2", "Nano Banana Pro", "Kling 3", "Vidu"],
     },
     {
       category: "micro-drama",
@@ -101,8 +101,9 @@ window.SITE = {
       cover: "assets/covers/micro-drama-1.svg",
       stat: { en: "In production · 35 episodes", fa: "در حال تولید · ۳۵ قسمت" },
       videos: [
-        { label: { en: "Episode 1", fa: "قسمت ۱" } },
-        { label: { en: "Episode 2", fa: "قسمت ۲" } },
+        { label: { en: "Episode 1", fa: "قسمت ۱" }, drive: "1XSJGA_0YzphfC30tzEU6HkS-cywoKmaC" },
+        { label: { en: "Episode 2", fa: "قسمت ۲" }, drive: "1jCAtMOZtquDNrK7Z5pIX_L1lWN6AvkmI" },
+        { label: { en: "Episode 3 · soon", fa: "قسمت ۳ · به‌زودی" } },
       ],
       summary: {
         en: "A vertical cyberpunk micro-drama series: 35 main episodes (up to 40 with side episodes), each 1 to 3 minutes long. The heir to a mega-corporation is framed for his father's murder and flees into the undercity of Neopolis, a vertical megacity layered by class. There he falls for Nora, an implant mechanic and street hacker, and is forced to choose between reclaiming his family's empire and saving the person he truly cares about. The upper city is clean, cold blue and white light; the undercity is broken neon in warm reds and purples.",
@@ -113,11 +114,35 @@ window.SITE = {
         en: ["Story and concept development", "Built all visual assets", "Generated all video", "Assembled shots on a timeline for the editor"],
         fa: ["پرورش قصه و ایده", "ساخت همه‌ی دارایی‌های بصری", "ساخت همه‌ی ویدئوها", "چیدن نماها روی تایم‌لاین برای تدوینگر"],
       },
-      tools: ["GPT Image", "Seedance 2.5", "Higgsfield"],
+      tools: ["GPT Image 2.5", "Seedance 2.5"],
       note: {
         en: "These 2 episodes are not the final cut: the shots are assembled in order to show the direction and visuals, and the final edit is done by the editor. The series hasn't been released yet; release starts once 7 to 8 episodes are ready, then one new episode a week.",
         fa: "این ۲ قسمت تدوین نهایی نیستند؛ نماها فقط به ترتیب کنار هم چیده شده‌اند تا مسیر و فضای بصری را نشان دهند و تدوین نهایی را تدوینگر انجام می‌دهد. سریال هنوز منتشر نشده؛ انتشار وقتی شروع می‌شود که ۷ تا ۸ قسمت آماده باشد و بعد هر هفته یک قسمت.",
       },
+    },
+    {
+      category: "micro-drama",
+      title: { en: "Game Over", fa: "گیم اور" },
+      year: 2026,
+      vertical: true,
+      cover: "assets/covers/game-over.jpg",
+      stat: { en: "Micro series · in production", fa: "میکروسریال · در حال تولید" },
+      videos: [
+        { label: { en: "Episode 1", fa: "قسمت ۱" } },
+        { label: { en: "Episode 2", fa: "قسمت ۲" } },
+        { label: { en: "More episodes · soon", fa: "قسمت‌های بعد · به‌زودی" } },
+      ],
+      summary: {
+        en: "A vertical crime thriller. Hamed agrees to secretly film his friend Arash settling an old score in a car junkyard, but the fight turns deadly: a stranger on a motorcycle kills Arash and leaves Hamed unconscious in the dirt. When he wakes up, the body is gone, and a message lights up his phone: \"The game has begun.\" Photos arrive that make Hamed look like the killer, and when he reaches the police station, the stranger threatens Haniyeh, Arash's sister and the woman Hamed loves. From then on, every move is part of someone else's game.",
+        fa: "یک تریلر جنایی عمودی. حامد قبول می‌کند پنهانی از دوستش آرش فیلم بگیرد که در گورستان ماشین‌های اسقاطی می‌خواهد یک حساب قدیمی را صاف کند؛ اما دعوا مرگبار می‌شود: یک موتورسوار ناشناس آرش را می‌کشد و حامد را بیهوش روی خاک رها می‌کند. وقتی به هوش می‌آید، جنازه نیست و پیامی روی گوشی‌اش روشن می‌شود: «بازی شروع شد.» عکس‌هایی می‌رسد که حامد را قاتل نشان می‌دهد و وقتی به کلانتری می‌رسد، ناشناس هانیه، خواهر آرش و کسی که حامد دوستش دارد، را تهدید می‌کند. از این به بعد هر حرکتش بخشی از بازی کس دیگری است.",
+      },
+      role: { en: "AI Director: images and video", fa: "کارگردان هوش مصنوعی: تصویر و ویدئو" },
+      did: {
+        en: ["Visual design of characters and locations", "Generated all images", "Generated all video", "Turned the script into shots"],
+        fa: ["طراحی بصری کاراکترها و لوکیشن‌ها", "ساخت همه‌ی تصویرها", "ساخت همه‌ی ویدئوها", "تبدیل فیلمنامه به نما"],
+      },
+      credits: { en: "Amirreza Maleki & Elham Ahmadi", fa: "امیررضا ملکی و الهام احمدی" },
+      tools: ["Seedream 5", "GPT Image 2.5", "Seedance 2.5"],
     },
     {
       category: "commercial",
@@ -128,13 +153,13 @@ window.SITE = {
       cover: "assets/covers/commercial-2.svg",
       videos: [{ instagram: "https://www.instagram.com/reel/DaTK41cga9v/" }],
       summary: {
-        en: "A shot-for-shot recreation of Promptr's mineral water ad, made as a personal, non-commercial practice piece. The idea, direction and sound belong entirely to Promptr; the original audio is used as-is.",
-        fa: "بازسازی نما‌به‌نمای تبلیغ آب معدنی Promptr، به‌عنوان یک تمرین شخصی و غیرتجاری. ایده، کارگردانی و صدا کاملاً متعلق به Promptr است و صدای اصلی تبلیغ بدون تغییر استفاده شده.",
+        en: "A personal study: I rebuilt Promptr's mineral water ad entirely with AI, matching its framing, light and pacing as closely as I could. It was made for practice, not for a client, and was never paid. All credit for the idea, direction and sound goes to Promptr; the original audio track is used unchanged.",
+        fa: "یک تمرین شخصی: تبلیغ آب معدنی Promptr را کامل با هوش مصنوعی از نو ساختم و تا جای ممکن قاب‌بندی، نور و ریتمش را به نسخه‌ی اصلی نزدیک کردم. این کار برای تمرین ساخته شد، نه برای مشتری، و هیچ دستمزدی نداشت. اعتبار ایده، کارگردانی و صدا کاملاً متعلق به Promptr است و صدای اصلی تبلیغ بدون تغییر استفاده شده.",
       },
       role: { en: "AI recreation", fa: "بازسازی با هوش مصنوعی" },
       did: {
-        en: ["Broke the original down shot by shot", "Rebuilt every shot with AI"],
-        fa: ["شکستن تبلیغ اصلی نما به نما", "بازسازی همه‌ی نماها با هوش مصنوعی"],
+        en: ["Recreated the full ad with AI", "Matched framing, light and timing to the original"],
+        fa: ["بازسازی کامل تبلیغ با هوش مصنوعی", "هماهنگ کردن قاب، نور و زمان‌بندی با نسخه‌ی اصلی"],
       },
       note: {
         en: "This exercise showed me how much great work depends on sound design and storytelling. Being AI-made doesn't carry a piece on its own; behind this ad are years of experience in ideation and storytelling, and you only truly understand that when you rebuild it shot by shot.",
